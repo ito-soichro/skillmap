@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Skillmap</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  <!-- アラートメッセージ-->
+    <%if flash[:notice]%>
+      <p class="notice"><%= notice %></p>
+      <%end%>
+    <%if flash[:alert]%>  
+      <p class="alert"><%= alert %></p>
+    <%end%>
+
+      <%= link_to root_path, class:"header" do %>
+        <h1>SKILL MAP</h1>
+      <% end %>
+　　<!-- ログイン機能-->
+      <% if user_signed_in?%>
+        <%= link_to "新規投稿", new_tweet_path,class:"new_tweet"%>
+        <%= link_to "投稿一覧", tweets_path,class:"tweets"%>
+        <%= link_to "投稿者一覧", users_path, class:"users"%>
+        <%= link_to "マイページ", user_path(current_user), class:"user"%>
+        <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:"log_out"%>
+      <% else %>  
+        <%= link_to "投稿一覧", tweets_path,class:"tweets"%>
+        <%= link_to "投稿者一覧", users_path, class:"users"%>
+        <%= link_to "ログイン", new_user_session_path, class:"log_in" %>
+        <%= link_to "新規登録", new_user_registration_path, class:"new_user" %>
+      <% end %>
+
+    <%= yield %>
+  
+  
+  </body>
+</html>
+
+<!-- 全てに共通しているものを書く-->
