@@ -1,0 +1,22 @@
+.tweets
+  - if @tweet.errors.any?
+    = pluralize(@tweet.errors.count, "error")
+    エラーです。
+    - @tweet.errors.full_messages.each do |message|
+      = message
+  = form_for @tweet do |f|
+    .tweets__tweet
+      .tweets__tweet__label
+        = f.label :タイトル
+      .tweets__tweet__title
+        = f.text_field :title
+      .tweets__tweet__label  
+        = f.label :テキスト
+      .tweets__tweet__body
+        = f.text_area :body
+      .tweets__tweet__label  
+        = f.label :写真
+      .tweets__tweet__image  
+        = f.attachment_field :image
+      .tweets__tweet__submit  
+        = f.submit "投稿"
