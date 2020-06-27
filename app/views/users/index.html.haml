@@ -1,5 +1,11 @@
 / ユーザーの一覧画面
-- @users.each do |user|
-  = link_to user_path(user) do
-    = attachment_image_tag user, :profile_image, fallback: "no-image.png"
-  = link_to user.username, user_path(user)
+= render 'layouts/notifications'
+.users
+  - @users.each do |user|
+    .users__lists
+      .users__lists__list
+        .users__lists__list__image
+          = link_to user_path(user) do
+            = attachment_image_tag user, :profile_image, fallback: "no-image.png"
+        .users__lists__list__name    
+          = link_to user.username, user_path(user)

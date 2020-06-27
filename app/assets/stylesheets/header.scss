@@ -1,0 +1,37 @@
+.profile_image{
+  border-radius: 50%;
+}
+
+.header{
+ background-color: black;
+ height: 100px;
+ width: 100vw;
+ display: flex;
+ align-items: center;
+ border-bottom: 1px solid #ddd;
+ padding-left: 20px;
+ .header__title{
+ }
+ 
+ .header__log_out{
+  margin-left: 980px;
+   .header__log_out__log_in{
+   
+    .mypage{
+      padding-left: 16px;
+      font-size: 12px;
+    }
+    .logout{
+      padding-left: 16px;
+      font-size: 12px;
+    }
+  }
+ }
+
+ a{
+  text-decoration: none;
+  color: cornsilk;
+  font-size: 15px;
+  }
+
+}
