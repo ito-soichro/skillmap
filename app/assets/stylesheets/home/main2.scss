@@ -1,0 +1,66 @@
+.main2{
+  position: relative;
+  .main2__title,.main2__user-name{
+    background-color: rgb(151, 155, 155);
+    height: 100px;
+    width: 100%;
+    text-align: center;
+    padding-top: 20px;
+  }
+  .main2__tweets{
+    display: flex;
+    justify-content: center;
+    .main2__tweets__lists{
+     padding: 10px 40px 10px 40px;
+      .main2__tweets__lists_list{
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        -webkit-transition: all .3s;
+        transition: all .3s;
+        .main2__tweets__lists_list__tweet_image{
+          img {
+            width: 100px;
+            height: 100px;
+          }
+        }
+      }
+      .main2__tweets__lists_list:hover {
+        -webkit-transform: translateY(-5px);
+        -ms-transform: translateY(-5px);
+        transform: translateY(-5px);
+       }
+    }
+  }
+  .main2__users{
+    display: flex;
+    justify-content: center;
+    .main2__users__lists{
+      padding: 10px 40px 10px 40px;
+      .main2__users__lists__list{
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        -webkit-transition: all .3s;
+        transition: all .3s;
+        .main2__users__lists__list__image{
+          img {
+            width: 100px;
+            height: 100px;
+          }
+          .main2__users__lists__list__name {
+            
+          }
+        }
+      }
+      .main2__users__lists__list:hover {
+        -webkit-transform: translateY(-5px);
+        -ms-transform: translateY(-5px);
+        transform: translateY(-5px);
+       }
+    }
+  }
+  a{
+    text-decoration: none;
+  }
+} 
