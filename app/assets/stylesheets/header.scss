@@ -3,20 +3,18 @@
 }
 
 .header{
- background-color: black;
+  background-color: rgb(151, 155, 155);
  height: 100px;
- width: 100vw;
+ width: 100%;
  display: flex;
  align-items: center;
  border-bottom: 1px solid #ddd;
- padding-left: 20px;
  .header__title{
+  padding-left: 20px;
  }
- 
  .header__log_out{
   margin-left: 980px;
    .header__log_out__log_in{
-   
     .mypage{
       padding-left: 16px;
       font-size: 12px;
@@ -33,5 +31,4 @@
   color: cornsilk;
   font-size: 15px;
   }
-
 }

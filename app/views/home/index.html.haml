@@ -1,12 +1,26 @@
 = render 'layouts/notifications'
 
+.main
+  .reserch
+    = form_with(url: search_tweets_path, local: true, method: :get, class: "search-form") do |form|
+      = form.text_field :keyword, placeholder: "投稿を検索する", class: "search-input"
+      = form.submit "検索", class: "search-btn"
+  .about
+    - if user_signed_in?
+      = link_to "新規投稿", new_tweet_path, class:"user-lists"
+      = link_to "投稿一覧", tweets_path, class:"tweet-lists"
+      = link_to "投稿者一覧", users_path, class:"user-lists"
 
-- if user_signed_in?
-  = link_to "新規投稿", new_tweet_path
-  = link_to "投稿一覧", tweets_path
-  = link_to "投稿者一覧", users_path
- 
-- else
-  = link_to "投稿一覧", tweets_path
-  = link_to "投稿者一覧", users_path
+    - else
+      = link_to "投稿一覧", tweets_path, class:"tweet-lists"
+      = link_to "投稿者一覧", users_path, class:"user-lists"
   
+.center
+  .bg-video-wrap
+    %video{:autoplay => "", :loop => "", :muted => "", :src => "https://designsupply-web.com/samplecontent/vender/codepen/20181014.mp4"}
+    .overlay
+.main2
+
+
+
+.fooder
