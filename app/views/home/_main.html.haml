@@ -1,0 +1,15 @@
+.main
+  .reserch
+    = form_with(url: search_tweets_path, local: true, method: :get, class: "search-form") do |form|
+      = form.text_field :keyword, placeholder: "投稿を検索する", class:"sbox2"
+      %button{type: "submit", class:"sbtn2"}
+        %i.fas.fa-search
+  .about
+    - if user_signed_in?
+      = link_to "新規投稿", new_tweet_path, class:"user-lists"
+      = link_to "投稿一覧", tweets_path, class:"tweet-lists"
+      = link_to "投稿者一覧", users_path, class:"user-lists"
+
+    - else
+      = link_to "投稿一覧", tweets_path, class:"tweet-lists"
+      = link_to "投稿者一覧", users_path, class:"user-lists"

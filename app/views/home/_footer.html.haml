@@ -1,0 +1,29 @@
+.footer
+  .footer__contents
+    %ul.footer__contents__title
+      %li.footer__contents__item
+        %h2.inner-title SKILL MAPについて
+        %ul.inner-title__listname
+          %li.inner-title__listname__lists
+            = link_to(root_path, class:"links") do
+              サービスの内容
+          %li.inner-title__listname__lists
+            = link_to(root_path, class:"links") do
+              サービスのビジョン
+          %li.inner-title__listname__lists
+            = link_to(root_path, class:"links") do
+              サービスの利用方法
+      %li.footer_contents__item
+        %h2.inner-title SKILL MAP 運営
+        %ul.inner-title__listname
+          %li.inner-title__listname__lists
+            = link_to "投稿一覧", tweets_path, class:"tweet-lists"
+          %li.inner-title__listname__lists
+            = link_to "投稿者一覧", users_path, class:"user-lists"
+      %li.footer_contents__item
+        %h2.inner-title ヘルプ＆ガイド
+        %ul.inner-title__listname
+          %li.inner-title__listname__lists
+            = link_to(root_path, class:"links") do
+              問合せ
+          
