@@ -1,7 +1,10 @@
  @import "reset";
  @import "modules/user";
- @import "tweets";
- @import "users";
+ @import "tweet/tweet";
+ @import "tweet/tweets";
+ @import "tweet/users_tweets";
+ @import "tweet/user_tweet";
+ @import "users/users";
  @import "header";
  @import "home/main";
  @import "home/center";

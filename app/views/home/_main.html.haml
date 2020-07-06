@@ -6,10 +6,10 @@
         %i.fas.fa-search
   .about
     - if user_signed_in?
-      = link_to "新規投稿", new_tweet_path, class:"user-lists"
-      = link_to "投稿一覧", tweets_path, class:"tweet-lists"
-      = link_to "投稿者一覧", users_path, class:"user-lists"
+      = link_to "new tweet", new_tweet_path, class:"user-lists"
+      = link_to "tweet lists", tweets_path, class:"tweet-lists"
+      = link_to "user lists", users_path, class:"user-lists"
 
     - else
-      = link_to "投稿一覧", tweets_path, class:"tweet-lists"
-      = link_to "投稿者一覧", users_path, class:"user-lists"
+      = link_to "tweet lists", tweets_path, class:"tweet-lists"
+      = link_to "user lists", users_path, class:"user-lists"

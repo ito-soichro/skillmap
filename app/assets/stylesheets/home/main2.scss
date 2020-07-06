@@ -1,11 +1,18 @@
 .main2{
   position: relative;
-  .main2__title,.main2__user-name{
-    // background-color: rgb(151, 155, 155);
+  .main2__title{
     height: 100px;
     width: 100%;
     text-align: center;
-    padding-top: 20px;
+    padding-top: 60px;
+    
+  }
+  .main2__user-name{
+    height: 100px;
+    width: 100%;
+    text-align: center;
+    padding-top: 60px;
+    
   }
   .main2__tweets{
     display: flex;
@@ -62,5 +69,29 @@
   }
   a{
     text-decoration: none;
+  }
+  h1 {
+    margin: auto;
+    position: relative;
+    width: 200px;
+    padding: 0.25em 1em;
+    border-top: solid 2px rgb(250, 247, 247);
+    border-bottom: solid 2px rgb(250, 247, 247);
+    
+  }
+  h1:before, h1:after {
+    content: '';
+    position: absolute;
+    top: -7px;
+    width: 2px;
+    height: -webkit-calc(100% + 14px);
+    height: calc(100% + 14px);
+    background-color:rgb(250, 247, 247);
+  }
+  h1:before {
+    left: 200px;
+  }
+  h1:after {
+    right: 200px;
   }
 } 

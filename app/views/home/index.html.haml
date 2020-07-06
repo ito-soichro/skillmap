@@ -1,13 +1,16 @@
 .top-page
-  = render 'layouts/notifications'
-  = render 'home/main'
-  = render 'home/center'
-  = render 'home/main2'
-  = render 'home/footer'
+  %link{:href => "https://fonts.googleapis.com/css?family=Lato:300", :rel => "stylesheet", :type => "text/css"}/
+  .container
+    .overlay
+      = render 'layouts/notifications'
+      = render 'home/main'
+      = render 'home/center'
+      = render 'home/main2'
+      = render 'home/footer'
 
 
 
-  
+
 
 
 
