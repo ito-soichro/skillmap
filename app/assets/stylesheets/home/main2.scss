@@ -1,0 +1,97 @@
+.main2{
+  position: relative;
+  .main2__title{
+    height: 100px;
+    width: 100%;
+    text-align: center;
+    padding-top: 60px;
+    
+  }
+  .main2__user-name{
+    height: 100px;
+    width: 100%;
+    text-align: center;
+    padding-top: 60px;
+    
+  }
+  .main2__tweets{
+    display: flex;
+    justify-content: center;
+    .main2__tweets__lists{
+     padding: 10px 40px 10px 40px;
+      .main2__tweets__lists_list{
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        -webkit-transition: all .3s;
+        transition: all .3s;
+        .main2__tweets__lists_list__tweet_image{
+          img {
+            width: 100px;
+            height: 100px;
+          }
+        }
+      }
+      .main2__tweets__lists_list:hover {
+        -webkit-transform: translateY(-5px);
+        -ms-transform: translateY(-5px);
+        transform: translateY(-5px);
+       }
+    }
+  }
+  .main2__users{
+    display: flex;
+    justify-content: center;
+    .main2__users__lists{
+      padding: 10px 40px 10px 40px;
+      .main2__users__lists__list{
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        -webkit-transition: all .3s;
+        transition: all .3s;
+        .main2__users__lists__list__image{
+          img {
+            width: 100px;
+            height: 100px;
+          }
+          .main2__users__lists__list__name {
+            
+          }
+        }
+      }
+      .main2__users__lists__list:hover {
+        -webkit-transform: translateY(-5px);
+        -ms-transform: translateY(-5px);
+        transform: translateY(-5px);
+       }
+    }
+  }
+  a{
+    text-decoration: none;
+  }
+  h1 {
+    margin: auto;
+    position: relative;
+    width: 200px;
+    padding: 0.25em 1em;
+    border-top: solid 2px rgb(250, 247, 247);
+    border-bottom: solid 2px rgb(250, 247, 247);
+    
+  }
+  h1:before, h1:after {
+    content: '';
+    position: absolute;
+    top: -7px;
+    width: 2px;
+    height: -webkit-calc(100% + 14px);
+    height: calc(100% + 14px);
+    background-color:rgb(250, 247, 247);
+  }
+  h1:before {
+    left: 200px;
+  }
+  h1:after {
+    right: 200px;
+  }
+} 

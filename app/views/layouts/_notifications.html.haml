@@ -1,20 +1,19 @@
-/ アラートメッセージ
-- if flash[:notice]
-  %p.notice= notice
-- if flash[:alert]
-  %p.alert= alert
+-# / アラートメッセージ
+-# - if flash[:notice]
+-#   %p.notice= notice
+-# - if flash[:alert]
+-#   %p.alert= alert
 .header 
   .header__title
     = link_to root_path do
       %h1 SKILL MAP　
   .header__log_out  
-  - if user_signed_in?
-    = link_to destroy_user_session_path, method: :delete do
-      ログアウト
-  - else  
-    .header__log_out__log_in
-      = link_to  new_user_session_path do
-        ログイン
-      = link_to new_user_registration_path do
-        新規登録
+    - if user_signed_in?
+      .header__log_out__log_in
+        = link_to "マイページ", user_path(current_user),class:"mypage"
+        = link_to "ログアウト", destroy_user_session_path, method: :delete,class:"logout"
+    - else  
+      .header__log_out__log_in
+        = link_to "ログイン", new_user_session_path
+        = link_to "新規登録", new_user_registration_path
 

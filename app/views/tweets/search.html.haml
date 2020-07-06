@@ -1,0 +1,8 @@
+= form_with(url: search_tweets_path, local: true, method: :get, class: "search-form") do |form|
+  = form.text_field :keyword, placeholder: "投稿を検索する", class: "search-input"
+  = form.submit "検索", class: "search-btn"
+.contents.row
+  - @tweets.each do |tweet|
+    = render partial: "tweet", locals: { title: tweet }
+
+-# render partial: "呼び出すファイル名", locals:{ local変数(呼び出すファイル内で用いる変数名): 渡す値 }

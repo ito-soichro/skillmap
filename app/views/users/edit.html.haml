@@ -1,16 +1,27 @@
-- if @user.errors.any?
-  = pluralize(@user.errors.count, "error")
-  エラーです。
-  - @user.errors.full_messages.each do |message|
-    = message
-/ 編集画面
-= form_for @user do |f|
-  = f.label :username
-  = f.text_field :username
-  = f.label :email
-  = f.text_field :email
-  = f.label :profile
-  = f.text_field :profile
-  = f.label :profile_image
-  = f.attachment_field :profile_image
-  = f.submit "更新"
+.user_edit
+  - if @user.errors.any?
+    = pluralize(@user.errors.count, "error")
+    エラーです。
+    - @user.errors.full_messages.each do |message|
+      = message
+  / 編集画面
+  = form_for @user do |f|
+    .user_edit__contents
+      .user_edit__contents__label
+        = f.label :username
+      .user_edit__contents__username
+        = f.text_field :username
+      .user_edit__contents__label
+        = f.label :email
+      .user_edit__contents__email  
+        = f.text_field :email
+      .user_edit__contents__label
+        = f.label :profile
+      .user_edit__contents__profile    
+        = f.text_area :profile
+      .user_edit__contents__label
+        = f.label :profile_image
+      .user_edit__contents__image  
+        = f.attachment_field :profile_image
+      .tweets__tweet__submit    
+        = f.submit "更新"

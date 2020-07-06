@@ -1,6 +1,8 @@
 class TweetsController < ApplicationController
   before_action :authenticate_user!, except: [:index]
   #ログインしていないユーザー以外は、indexアクション以外アクセスできなくなる
+  before_action :move_to_index, except: [:index, :show, :search]
+
 
   def index
     @tweets = Tweet.all
@@ -8,6 +10,12 @@ class TweetsController < ApplicationController
 
   def show
     @tweet = Tweet.find(params[:id])
+    @comment = Comment.new
+    @comments = @tweet.comments.includes(:user)
+  end
+
+  def search
+    @tweets = Tweet.search(params[:keyword])
   end
 
   def new
@@ -49,5 +57,9 @@ class TweetsController < ApplicationController
   private
   def tweet_params
     params.require(:tweet).permit(:title, :body, :image)
+  end
+
+  def move_to_index
+    redirect_to action: :index unless user_signed_in?
   end
 end

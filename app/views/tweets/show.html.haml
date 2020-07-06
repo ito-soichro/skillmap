@@ -1,9 +1,35 @@
-= attachment_image_tag @tweet, :image
-= @tweet.title
-= simple_format @tweet.body
-/ simple_formatで入力した内容も改行させる　
-- if @tweet.user.id == current_user.id
-  = button_to  '編集', edit_tweet_path(@tweet), method: :get
-= link_to user_path(@tweet.user) do
-  = @tweet.user.username
-  さんのページへ
+.tweet_color
+  = render 'layouts/notifications'
+  .tweet_about
+    .left_said
+      .tweet
+        .tweet__title
+          - if @tweet.user.id == current_user.id
+            = button_to  '編集', edit_tweet_path(@tweet), method: :get
+          = @tweet.title
+        .tweet__image
+          = attachment_image_tag @tweet, :image
+        .tweet__text
+          = simple_format @tweet.body
+          / simple_formatで入力した内容も改行させる
+        .tweet__user-link
+          = link_to user_path(@tweet.user) do
+            = @tweet.user.username
+            さんのページへ
+    .right_said
+      .tweet2
+        .tweet__comment 
+          - if current_user
+            = form_tag("/tweets/#{@tweet.id}/comments", method: :post) do
+              %textarea{cols: "30", name: "text", placeholder: "コメントする", class: "comment"}
+              %input{type: "submit", value: "コメント", class: "button"}
+          .comments
+            %h4 ＜コメント一覧＞
+            - if @comments
+              - @comments.each do |comment|
+                %p
+                  %storng
+                    = link_to comment.user.username, "/users/#{comment.user_id}"
+                    ：
+                    \#{comment.text}   
+  = render 'home/footer'        

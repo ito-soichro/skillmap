@@ -5,6 +5,8 @@
     - @tweet.errors.full_messages.each do |message|
       = message
   = form_for @tweet do |f|
+    .tweets_title
+      new tweet!!
     .tweets__tweet
       .tweets__tweet__label
         = f.label :タイトル
@@ -19,4 +21,5 @@
       .tweets__tweet__image  
         = f.attachment_field :image
       .tweets__tweet__submit  
-        = f.submit "投稿"
+        = f.submit "ツイートする",class:"botton"
+    = render 'home/footer'
