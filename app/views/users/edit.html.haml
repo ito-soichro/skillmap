@@ -1,27 +1,34 @@
-.user_edit
-  - if @user.errors.any?
-    = pluralize(@user.errors.count, "error")
-    エラーです。
-    - @user.errors.full_messages.each do |message|
-      = message
-  / 編集画面
-  = form_for @user do |f|
-    .user_edit__contents
-      .user_edit__contents__label
-        = f.label :username
-      .user_edit__contents__username
-        = f.text_field :username
-      .user_edit__contents__label
-        = f.label :email
-      .user_edit__contents__email  
-        = f.text_field :email
-      .user_edit__contents__label
-        = f.label :profile
-      .user_edit__contents__profile    
-        = f.text_area :profile
-      .user_edit__contents__label
-        = f.label :profile_image
-      .user_edit__contents__image  
-        = f.attachment_field :profile_image
-      .tweets__tweet__submit    
-        = f.submit "更新"
+.back_color
+  = render 'layouts/notifications'
+  .user_edit
+    .user_edit_title
+      プロフィール
+      .user_edit_error
+        - if @user.errors.any?
+          = pluralize(@user.errors.count, "error")
+          エラーです。
+          - @user.errors.full_messages.each do |message|
+            = message
+        / 編集画面
+      .user_edit_profile
+        = form_for @user do |f|
+          .user_edit__contents
+            .user_edit__contents__label
+              = f.label :username,"ニックネーム" 
+              .user_edit__contents__username
+                = f.text_field :username
+            .user_edit__contents__label
+              = f.label :email,"メールアドレス"
+              .user_edit__contents__email  
+                = f.text_field :email
+            .user_edit__contents__label
+              = f.label :profile, "プロフィール"
+              .user_edit__contents__profile    
+                = f.text_area :profile
+            .user_edit__contents__label
+              = f.label :profile_image, "プロフィール写真"
+              .user_edit__contents__image  
+                = f.attachment_field :profile_image
+            .tweets__tweet__submit    
+              = f.submit "更新", class:"submit"
+    = render 'home/footer'
