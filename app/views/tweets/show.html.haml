@@ -22,7 +22,8 @@
           - if current_user
             = form_tag("/tweets/#{@tweet.id}/comments", method: :post) do
               %textarea{cols: "30", name: "text", placeholder: "コメントする", class: "comment"}
-              %input{type: "submit", value: "コメント", class: "button"}
+              .button
+                %input{type: "submit", value: "コメント", }
           .comments
             %h4 ＜コメント一覧＞
             - if @comments
