@@ -1,17 +1,30 @@
 .account-page
-  = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-    .field
-      = f.label :email
-      %br/
-      = f.email_field :email, autofocus: true, autocomplete: "email"
-    .field
-      = f.label :password
-      %br/
-      = f.password_field :password, autocomplete: "current-password"
-    - if devise_mapping.rememberable?
-      .field
-        = f.check_box :remember_me
-        = f.label :remember_me
-    .actions
-      = f.submit "Log in"
-  = render "devise/shared/links"
+  %h1
+    %a
+      = link_to root_path do
+        =image_tag "08072020024838A.png"
+  .account-page__back
+    .account-page__top
+      .account-page__text
+        ログインして下さい
+      .line
+      
+      .account-page__main
+        = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+          .field
+            = f.label  :email, "メールアドレス",class:"email"
+            %br/
+            = f.email_field :email, autofocus: true, autocomplete: "email"
+          .field
+            = f.label :password, "パスワード",class:"pass_word"
+            %br/
+            = f.password_field :password, autocomplete: "current-password"
+          .field
+          - if devise_mapping.rememberable?
+            .field_remember
+              = f.check_box :remember_me
+              = f.label :remember_me
+          .field
+            = f.submit "Log in", class:"submit"
+        = render "devise/shared/links"
+  = render 'home/footer'

@@ -1,20 +1,92 @@
 .account-page{
-  background:rgb(15, 15, 15);
-  background-size:cover;
-  font-family:sans-serif;
-  text-align:center;
-  padding-top:20%;
-  width: 100vw;
-  height: 75vh;
-  color: #ffffff;
-  display: flex;
-  padding-top: 100px;
-  justify-content: center;
-  .field{
-    padding-bottom: 20px;
-    
+  background-image: -webkit-linear-gradient(top, #f0eaea 0%, #D9D9D9 26%, #EFEFEF 49%, #E0E0E0 74%, #D3D3D3 100%), -webkit-linear-gradient(top, #BCBCBC 0%, #D9D9D9 26%, #EFEFEF 49%, #E0E0E0 74%, #D3D3D3 100%), -webkit-linear-gradient(top, rgba(255, 255, 255, 0.2) 0%, rgba(0, 0, 0, 0.2) 150%), -webkit-radial-gradient(at 50% 59%, rgba(255, 255, 255, 0.3) 66%, rgba(0, 0, 0, 0.3) 200%);
+  background-image: linear-gradient(to bottom, #f3efef 0%, #f1eded 26%, #EFEFEF 49%, #E0E0E0 74%, #D3D3D3 100%), linear-gradient(to bottom, #eeeaea 0%, #f1ecec 26%, #EFEFEF 49%, #E0E0E0 74%, #D3D3D3 100%), linear-gradient(to bottom, rgba(255, 255, 255, 0.2) 0%, rgba(0, 0, 0, 0.2) 150%), radial-gradient(at 50% 59%, rgba(255, 255, 255, 0.3) 66%, rgba(0, 0, 0, 0.3) 200%);
+  background-blend-mode: multiply,multiply,screen;
+  width: 100%;
+  height: 100%;
+  h1 {
+    margin: 40px 0 0;
+    display: inline-block;
+    a{
+      line-height: 49px;
+      margin-left: 275px;
+      img{
+        width: 150px;
+        height: 150px;
+      }
+    }
   }
-  .actions{
-        
+  .account-page__back{
+    display: flex;
+    justify-content: center;
+    padding-top: 80px;
+    .account-page__top{
+      background-color: rgb(253, 253, 250);
+      width: 400px;
+      height: 650px;
+      .account-page__text{
+        display: flex;
+        justify-content: center;
+        padding-top: 40px;
+        font-size: 20px;
+        padding-bottom: 20px;
+        }
+      .line{
+        margin:  auto;
+        max-width: 320px;
+        border-top: 1px solid #acaaaa;
+        }
+      .account-page__main{
+        padding-top: 40px;   
+        display: flex;
+        justify-content: center;   
+        .field{
+        padding-top: 20px;
+        input{
+          margin: 8px 0 0;
+          width: 90%;
+          height: 35px;
+          padding: 10px 16px 8px;
+          border-radius: 4px;
+          border: 1px solid #ccc;
+          line-height: 1.5;
+          font-size: 16px;
+          }
+        .signup-main__require{
+          font-size: 13px;  
+          background: #83d7e4;
+          margin: 0 0 0 8px;
+          border-radius: 2px;
+          padding: 2px 4px;
+          font-size: 12px;
+          color: white;
+          vertical-align: top;
+          }
+        .name{
+          font-size: 13px;
+          }
+        .email{
+          font-size: 13px;
+          } 
+        .pass_word{
+          font-size: 13px;
+          }
+        .pass_word_check{
+          font-size: 13px;
+          } 
+        .submit{
+          background: #a7d9e0;
+          border: 1px solid #17c1db;
+          color: white;
+          width: 270px;
+          height: 48px;
+          font-size: 14px;
+          margin-bottom: 20px;
+          cursor: pointer;
+          margin-left: 7px;
+          }
+        }
+      }
+    }
   }
 }

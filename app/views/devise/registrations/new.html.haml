@@ -1,25 +1,46 @@
 .account-page
-  = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-    = render "devise/shared/error_messages", resource: resource
-    .field
-      = f.label :名前
-      %br/
-      = f.text_field :username, autofocus: true, autocomplete: "username"
-    .field
-      = f.label :メールアドレス
-      %br/
-      = f.email_field :email, autofocus: true, autocomplete: "email"
-    .field
-      = f.label :パスワード
-      - if @minimum_password_length
-        %em
-          (#{@minimum_password_length} characters minimum)
-      %br/
-      = f.password_field :password, autocomplete: "new-password"
-    .field
-      = f.label :パスワード再入力
-      %br/
-      = f.password_field :password_confirmation, autocomplete: "new-password"
-    .actions
-      = f.button "Sign up"
-  = render "devise/shared/links"
+  %h1
+    %a
+      = link_to root_path do
+        =image_tag "08072020024838A.png"
+
+  .account-page__back
+    .account-page__top
+      .account-page__text
+        アカウント作成
+      .line
+      
+      .account-page__main
+        = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+          = render "devise/shared/error_messages", resource: resource
+          .field
+            = f.label :name,"ニックネーム", class: "name"
+            %span.signup-main__require
+              必須
+            %br/
+            = f.text_field :username, autofocus: true, autocomplete: "username"
+          .field
+            = f.label :email, "メールアドレス",class:"email"
+            %span.signup-main__require
+              必須
+            %br/
+            = f.email_field :email, autofocus: true, autocomplete: "email"
+          .field
+            = f.label :password, "パスワード",class:"pass_word"
+            %span.signup-main__require
+              必須
+            -# - if @minimum_password_length
+              -# %em
+                -# (#{@minimum_password_length} characters minimum)
+            %br/
+            = f.password_field :password, autocomplete: "new-password"
+          .field
+            = f.label :password_confirmation, "パスワード確認",class:"pass_word_check"
+            %span.signup-main__require
+              必須
+            %br/
+            = f.password_field :password_confirmation, autocomplete: "new-password"
+          .field
+            = f.button "Sign up", class:"submit"
+        = render "devise/shared/links"
+  = render 'home/footer'
