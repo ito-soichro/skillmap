@@ -65,3 +65,4 @@ gem "refile-mini_magick"
 gem 'devise'
 gem 'pry-rails'
 gem 'haml-rails'
+gem 'jquery-rails'
