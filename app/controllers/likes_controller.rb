@@ -1,4 +1,5 @@
 class LikesController < ApplicationController
+  # before_action :set_dream
 
   def create
     @like = current_user.likes.create(tweet_id: params[:tweet_id])
@@ -11,6 +12,7 @@ class LikesController < ApplicationController
     @like.destroy
     redirect_back(fallback_location: root_path)
   end
+
 
 end
 

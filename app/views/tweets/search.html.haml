@@ -29,13 +29,8 @@
                 
               .users_tweets__lists_list__user_name  
                 = tweet.updated_at.strftime("%Y-%m-%d %H:%M")
-                - if current_user.already_liked?(tweet)
-                  = link_to tweet_likes_path(tweet), method: :delete do
-                    %i.fas.fa-heart
-                - else
-                  = link_to tweet_likes_path(tweet), method: :post do
-                    %i.far.fa-heart
-                = tweet.likes.count
+              %td{:id => "like-#{tweet.id}"}
+                = render partial: "likes/like", locals: { tweet: tweet }
 
   = render 'home/footer'      
 

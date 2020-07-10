@@ -1,0 +1,18 @@
+.users_tweets__lists_list__user_like
+  -# - if current_user.already_liked?(tweet)
+  -#   .on_like
+  -#     = link_to tweet_likes_path(tweet), method: :delete , remote: true do
+  -#       %i.fas.fa-heart
+  -# - else
+  -#   .no_like
+  -#     = link_to tweet_likes_path(tweet), method: :post , remote: true do
+  -#       %i.far.fa-heart
+  -# = tweet.likes.count
+  
+  - if Like.find_by(user_id: current_user.id, tweet_id: tweet.id)
+    = link_to "/tweets/#{tweet.id}/likes", method: :delete, remote: true do
+      %i.fas.fa-heart
+  - else
+    = link_to "/tweets/#{tweet.id}/likes", method: :post, remote: true do
+      %i.far.fa-heart
+  = tweet.likes.count
