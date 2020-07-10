@@ -4,7 +4,7 @@ class CommentsController < ApplicationController
     # binding.pry
     @comment = Comment.create(comment_params)
     respond_to do |format|
-      format.html{redirect_to tweet_parh(params[:tweet_id]) }
+      format.html{redirect_to tweet_path(params[:tweet_id]) }
       format.json
     end
   end
