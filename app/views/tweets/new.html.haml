@@ -16,10 +16,14 @@
         = f.label :テキスト
       .tweets__tweet__body
         = f.text_area :body
+
       .tweets__tweet__label  
         = f.label :写真
       .tweets__tweet__image  
         = f.attachment_field :image
+
+
+        
       .tweets__tweet__submit  
         = f.submit "ツイートする",class:"botton"
     = render 'home/footer'
