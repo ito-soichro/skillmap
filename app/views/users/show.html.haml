@@ -3,12 +3,14 @@
   .user_profile
     .user_profile__show
       .user_profile__show__details_edit
-      - if @user.id == current_user.id
-        = button_to '編集', edit_user_path(@user), method: :get
       .user_profile__show__details
         .user_profile__show__details_image
           = attachment_image_tag @user, :profile_image, fallback: "no-image.png"
+          .user_profile__show__details_edit
+            - if @user.id == current_user.id
+              = button_to '編集', edit_user_path(@user), method: :get,class:"edit"
         .user_profile__show__details_another
+          
           .user_profile__show__details_name
             ニックネーム：
             = @user.username
@@ -25,8 +27,11 @@
         .user_tweet__lists__list
           .user_tweet__lists__list__image
             = attachment_image_tag tweet, :image
-            = link_to "詳細", tweet_path(tweet)
-            - if @user.id == current_user.id
-              = link_to "編集", edit_tweet_path(tweet)
-              = link_to "削除", tweet_path(tweet), method: :delete, data: {confirm: "削除しますか？"}
+            .user_tweet_show
+              = link_to "詳細", tweet_path(tweet)
+              - if @user.id == current_user.id
+                .user_tweet_edit
+                  = link_to "編集", edit_tweet_path(tweet)
+                .user_tweet_destory
+                  = link_to "削除", tweet_path(tweet), method: :delete, data: {confirm: "削除しますか？"}
   = render 'home/footer'        

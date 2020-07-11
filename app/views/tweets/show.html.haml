@@ -4,9 +4,10 @@
     .left_said
       .tweet
         .tweet__title
-          - if @tweet.user.id == current_user.id
-            = button_to  '編集', edit_tweet_path(@tweet), method: :get
-          = @tweet.title
+          .tweet__title__edit
+            - if @tweet.user.id == current_user.id
+              = button_to  '編集', edit_tweet_path(@tweet), method: :get,class:"edit"
+            = @tweet.title
         .tweet__image
           = attachment_image_tag @tweet, :image
         .tweet__text
@@ -20,9 +21,10 @@
       .tweet2
         .tweet__comment 
           - if current_user
-            = form_tag("/tweets/#{@tweet.id}/comments", method: :post) do
-              %textarea{cols: "30", name: "text", placeholder: "コメントする", class: "comment"}
-              %input{type: "submit", value: "コメント", class: "button"}
+            = form_with(model: [@tweet, @comment], local: true, id: "new_comment") do |form|
+              = form.text_area :text, placeholder: "コメントする", class: "comment"
+              .form__submit
+                = form.submit "コメント"
           .comments
             %h4 ＜コメント一覧＞
             - if @comments
@@ -31,5 +33,6 @@
                   %storng
                     = link_to comment.user.username, "/users/#{comment.user_id}"
                     ：
-                    \#{comment.text}   
+                  = comment.text
+
   = render 'home/footer'        

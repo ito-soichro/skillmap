@@ -15,11 +15,22 @@
     .users_tweets__lists{
       padding-top: 10px;
       padding-left: 75px;
+      color: darkcyan;
+      font-style: italic;
+      
       .users_tweets__lists_list{
-        background:rgb(94, 92, 92);
-       
-        border-radius: 5%;
+        box-shadow: 10px 15px 25px rgba(0,0,0,0.30);
+        background-image: linear-gradient(to bottom, #e7e2e2 0%, #D9D9D9 26%, #EFEFEF 49%, #E0E0E0 74%, #D3D3D3 100%), linear-gradient(to bottom, #e4e0e0 0%, #D9D9D9 26%, #EFEFEF 49%, #E0E0E0 74%, #D3D3D3 100%), linear-gradient(to bottom, rgba(255, 255, 255, 0.972) 0%, rgba(0, 0, 0, 0.2) 150%), radial-gradient(at 50% 59%, rgba(255, 255, 255, 0.3) 66%, rgba(233, 230, 230, 0.3) 200%);
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        -webkit-transition: all .3s;
+        transition: all .3s;
         border: 1px solid rgb(247, 242, 242) ;
+        width: 200px;
+        margin-left: 20px;
+        text-align: center;
+       
         .users_tweets__lists_list__tweet_image{
           display: flex;
           justify-content: center;
@@ -42,7 +53,21 @@
         .users_tweets__lists_list__user_name{
           display: flex;
           padding-top: 60px;
+          padding-left: 10px;
+          .users_tweets__lists_list__user_like{
+            padding-left: 5px;
+          }
         }  
+      }
+      .users_tweets__lists_list:hover {
+        -webkit-transform: translateY(-5px);
+        -ms-transform: translateY(-5px);
+        transform: translateY(-5px);
+       }
+       a{
+        text-decoration: none;
+        color: darkcyan;
+        font-style: italic;
       }
     }
   }

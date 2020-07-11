@@ -9,22 +9,43 @@
     border-bottom: 1px solid #ddd;
     position: relative;
     .user_profile__show{
+      
       padding-top: 10px;
       padding-left: 350px;
       .user_profile__show__details{
+        box-shadow: 10px 15px 25px rgba(0,0,0,0.30);
+        background-color: rgb(248, 241, 241);
+        box-sizing: border-box;
+        transition: all .3s;
+        border: 1px solid rgb(247, 242, 242) ;
+
         height: 40vh;
         width: 50vw;
-        border-radius: 5%;
-        border: 1px solid rgb(247, 242, 242);
+        // border-radius: 5%;
+        // border: 1px solid rgb(247, 242, 242);
         display: flex;
         justify-content: center;
         padding-top: 20px;
         .user_profile__show__details_image{
           
           img {
-            width: 150px;
-            height: 150px;
+            width: 100px;
+            height: 100px;
           }
+          .user_profile__show__details_edit{
+            .edit{
+              background: #a7d9e0;
+            border: 1px solid #94e9f7;
+            color: white;
+            width: 100px;
+            height: 48px;
+            font-size: 14px;
+            margin-bottom: 20px;
+            cursor: pointer;
+            margin-left: 7px;
+            }
+          }
+          
         }
         .user_profile__show__details_another{
           padding-left: 50px;
@@ -52,11 +73,17 @@
       padding-top: 10px;
       padding-left: 75px;
       .user_tweet__lists__list{
-        // background:rgb(94, 92, 92);
-        // height: 40vh;
-        // width: 25vw;
-        border-radius: 5%;
+        box-shadow: 10px 15px 25px rgba(0,0,0,0.30);
+        background-image: linear-gradient(to bottom, #e7e2e2 0%, #D9D9D9 26%, #EFEFEF 49%, #E0E0E0 74%, #D3D3D3 100%), linear-gradient(to bottom, #e4e0e0 0%, #D9D9D9 26%, #EFEFEF 49%, #E0E0E0 74%, #D3D3D3 100%), linear-gradient(to bottom, rgba(255, 255, 255, 0.972) 0%, rgba(0, 0, 0, 0.2) 150%), radial-gradient(at 50% 59%, rgba(255, 255, 255, 0.3) 66%, rgba(233, 230, 230, 0.3) 200%);
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        -webkit-transition: all .3s;
+        transition: all .3s;
         border: 1px solid rgb(247, 242, 242) ;
+        width: 200px;
+        margin-left: 20px;
+        text-align: center;
         .user_tweet__lists__list__image{
           display: flex;
           justify-content: center;
@@ -67,15 +94,83 @@
             border-radius: 50%;
           }
         }
+       
+      }
+      .user_tweet__lists__list:hover{
+        -webkit-transform: translateY(-5px);
+        -ms-transform: translateY(-5px);
+        transform: translateY(-5px);
+      }
+      a{
+        text-decoration: none;
+        color: darkcyan;
+        font-style: italic;
       }
     }
   }
 
   .user_edit{
-    background:rgb(15, 15, 15);
-    height: 100vh;
-    width: 100vw;
-    color:#fff;
-    
+    width: 100%;
+    height: 100%;
+    padding-top: 80px;
+    text-align: center;
+    .user_edit_title{
+      border-bottom: 1px solid #ddd;
+      position: relative;
+      padding-bottom: 10px;
+      .user_edit_profile{
+        display: flex;
+        justify-content: center;
+        .user_edit__contents{
+          padding-top: 20px;
+          .user_edit__contents__label{
+            font-size: 13px;
+            padding-top: 30px;
+            .user_edit__contents__username{
+              font-size: 16px;
+              padding-top: 10px;
+            }
+            .user_edit__contents__email  {
+              font-size: 16px;
+              padding-top: 10px;
+
+            }
+            .user_edit__contents__profile{
+              padding-top: 10px;
+
+            }
+            .user_edit__contents__image {
+              padding-top: 10px;
+              padding-bottom: 30px;
+            }
+            .tweets__tweet__submit{
+             
+            }
+            input{
+              width:350px;
+            }
+            textarea{
+              width:500px;
+              height:150px;
+              padding: 15px;
+              } 
+          }
+          .submit{
+            
+            background: #a7d9e0;
+            border: 1px solid #94e9f7;
+            color: white;
+            width: 270px;
+            height: 48px;
+            font-size: 14px;
+            margin-bottom: 20px;
+            cursor: pointer;
+            margin-left: 7px;
+          }
+        }
+      }
+      
+    }
   }
+
 }
